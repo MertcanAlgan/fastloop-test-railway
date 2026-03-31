@@ -217,10 +217,25 @@ def get_client(live=True):
             if not hasattr(py_clob_client.client.ClobClient, '_fee_patched'):
                 orig_create_order = py_clob_client.client.ClobClient.create_order
                 def patched_create_order(self, order_args, *args, **kwargs):
-                    order_args.fee_rate_bps = 1000
+                    try:
+                        # Force 10% fee for all orders (1000 bps)
+                        order_args.fee_rate_bps = 1000
+                    except Exception:
+                        pass
                     return orig_create_order(self, order_args, *args, **kwargs)
+                
+                orig_create_market_order = py_clob_client.client.ClobClient.create_market_order
+                def patched_create_market_order(self, order_args, *args, **kwargs):
+                    try:
+                        order_args.fee_rate_bps = 1000
+                    except Exception:
+                        pass
+                    return orig_create_market_order(self, order_args, *args, **kwargs)
+
                 py_clob_client.client.ClobClient.create_order = patched_create_order
+                py_clob_client.client.ClobClient.create_market_order = patched_create_market_order
                 py_clob_client.client.ClobClient._fee_patched = True
+                print("⚡ Fee system patched (1000 bps force active)")
         except ImportError:
             print("Error: simmer-sdk not installed. Run: pip install simmer-sdk")
             sys.exit(1)

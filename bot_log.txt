@@ -1995,3 +1995,163 @@
   Actual divergence:   0.050
   Required divergence: 0.050 (fee breakeven 52.6% + 0.01 buffer)
 📊 Summary: Skip (divergence 0.050 < required 0.050 after 10% fee)
+⚡ FastLoop Improved Trader
+==================================================
+
+  [LIVE]
+
+⚙️  Config summary:
+  Asset: BTC 5m | momentum ≥ 0.1% | divergence ≥ 0.05 | max $5.00
+  Signals: momentum | time_filter=off | vol_sizing=on
+  Budget: $39.00 remaining today ($0.00/$39.00)
+
+🔍 Discovering BTC 5m fast markets...
+  Found 1 active markets
+
+🎯 Market: Bitcoin Up or Down - April 1, 10:25AM-10:30AM ET
+  Time left: 89398s (fallback)
+  YES price: $0.505 | Fee: 10%
+
+📈 Signal 1 — Momentum (binance)...
+  BTC: $67,338.13 (was $67,439.80)
+  Momentum: -0.151% | Vol ratio: 0.42x | Direction: DOWN
+📊 Summary: Skip (low volume: 0.42x avg)
+⚡ FastLoop Improved Trader
+==================================================
+
+  [LIVE]
+
+⚙️  Config summary:
+  Asset: BTC 5m | momentum ≥ 0.1% | divergence ≥ 0.05 | max $5.00
+  Signals: momentum | time_filter=off | vol_sizing=on
+  Budget: $39.00 remaining today ($0.00/$39.00)
+
+🔍 Discovering BTC 5m fast markets...
+  Found 1 active markets
+
+🎯 Market: Bitcoin Up or Down - April 1, 10:35AM-10:40AM ET
+  Time left: 89699s (fallback)
+  YES price: $0.500 | Fee: 10%
+
+📈 Signal 1 — Momentum (binance)...
+  BTC: $67,212.00 (was $67,273.61)
+  Momentum: -0.092% | Vol ratio: 1.34x | Direction: DOWN
+📊 Summary: Skip (momentum 0.092% < min 0.1%)
+⚡ FastLoop Improved Trader
+==================================================
+
+  [LIVE]
+
+⚙️  Config summary:
+  Asset: BTC 5m | momentum ≥ 0.1% | divergence ≥ 0.05 | max $5.00
+  Signals: momentum | time_filter=off | vol_sizing=on
+  Budget: $39.00 remaining today ($0.00/$39.00)
+
+🔍 Discovering BTC 5m fast markets...
+  Found 2 active markets
+
+🎯 Market: Bitcoin Up or Down - April 1, 12:45PM-12:50PM ET
+  Time left: 89390s (fallback)
+  YES price: $0.505 | Fee: 10%
+
+📈 Signal 1 — Momentum (binance)...
+  BTC: $67,706.95 (was $67,624.80)
+  Momentum: +0.121% | Vol ratio: 0.75x | Direction: UP
+  ✓ Momentum gate passed
+  Signal 2 (funding): off
+  Signal 3 (orderbook): off
+
+🧠 EV Analysis...
+  Side: YES | Entry: $0.505
+  Actual divergence:   0.045
+  Required divergence: 0.050 (fee breakeven 53.1% + 0.01 buffer)
+📊 Summary: Skip (divergence 0.045 < required 0.050 after 10% fee)
+⚡ FastLoop Improved Trader
+==================================================
+
+  [LIVE]
+
+⚙️  Config summary:
+  Asset: BTC 5m | momentum ≥ 0.1% | divergence ≥ 0.05 | max $5.00
+  Signals: momentum | time_filter=off | vol_sizing=on
+  Budget: $39.00 remaining today ($0.00/$39.00)
+
+🔍 Discovering BTC 5m fast markets...
+  Found 2 active markets
+
+🎯 Market: Bitcoin Up or Down - April 1, 12:45PM-12:50PM ET
+  Time left: 89095s (fallback)
+  YES price: $0.505 | Fee: 10%
+
+📈 Signal 1 — Momentum (binance)...
+  BTC: $67,758.70 (was $67,696.47)
+  Momentum: +0.092% | Vol ratio: 1.43x | Direction: UP
+📊 Summary: Skip (momentum 0.092% < min 0.1%)
+⚡ FastLoop Improved Trader
+==================================================
+
+  [LIVE]
+
+⚙️  Config summary:
+  Asset: BTC 5m | momentum ≥ 0.1% | divergence ≥ 0.05 | max $5.00
+  Signals: momentum | time_filter=off | vol_sizing=on
+  Budget: $39.00 remaining today ($0.00/$39.00)
+
+🔍 Discovering BTC 5m fast markets...
+  Found 2 active markets
+
+🎯 Market: Bitcoin Up or Down - April 1, 12:55PM-1:00PM ET
+  Time left: 89396s (fallback)
+  YES price: $0.505 | Fee: 10%
+
+📈 Signal 1 — Momentum (binance)...
+  BTC: $67,693.40 (was $67,696.77)
+  Momentum: -0.005% | Vol ratio: 1.90x | Direction: DOWN
+📊 Summary: Skip (momentum 0.005% < min 0.1%)
+⚡ FastLoop Improved Trader
+==================================================
+
+  [LIVE]
+
+⚙️  Config summary:
+  Asset: BTC 5m | momentum ≥ 0.1% | divergence ≥ 0.05 | max $5.00
+  Signals: momentum | time_filter=off | vol_sizing=on
+  Budget: $39.00 remaining today ($0.00/$39.00)
+
+🔍 Discovering BTC 5m fast markets...
+  Found 1 active markets
+
+🎯 Market: Bitcoin Up or Down - April 1, 1:05PM-1:10PM ET
+  Time left: 89697s (fallback)
+  YES price: $0.500 | Fee: 10%
+
+📈 Signal 1 — Momentum (binance)...
+  BTC: $68,504.08 (was $67,866.65)
+  Momentum: +0.939% | Vol ratio: 1.53x | Direction: UP
+  ✓ Momentum gate passed
+  Signal 2 (funding): off
+  Signal 3 (orderbook): off
+
+🧠 EV Analysis...
+  Side: YES | Entry: $0.500
+  Actual divergence:   0.050
+  Required divergence: 0.050 (fee breakeven 52.6% + 0.01 buffer)
+  ✓ EV gate passed (edge: 0.000 above threshold)
+
+💰 Sizing...
+  24h vol: 3.09% | Vol-adjusted size: $3.24
+  Final size: $3.24
+
+✅ All gates passed — TRADE
+   BTC up +0.939% but YES only $0.500
+   Divergence 0.050 | Momentum 0.939% | Size $3.24
+
+🔗 Importing market to Simmer...
+  ✅ Market ID: de4debbf-d581-4c...
+  Placing YES $3.24 (LIVE)...
+  ❌ Trade failed: CLOB submission failed: PolyApiException[status_code=400, error_message={'error': "invalid fee rate (0), current market's taker fee: 1000"}]
+
+📊 Summary:
+  Market:    Bitcoin Up or Down - April 1, 1:05PM-1:10PM ET
+  Signal:    UP 0.939% | YES $0.500
+  Action:    FAILED YES $3.24
