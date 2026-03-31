@@ -329,8 +329,8 @@ def get_momentum_signal(asset="BTC", source="binance", lookback=5):
         price_now    = float(candles[-1][4])
         momentum_pct = (price_now - price_then) / price_then * 100
         vols         = [float(c[5]) for c in candles]
-        avg_vol      = sum(vols) / len(vols)
-        vol_ratio    = vols[-1] / avg_vol if avg_vol > 0 else 1.0
+        avg_vol      = sum(vols[:-1]) / (len(vols) - 1) if len(vols) > 1 else 0.0001
+        vol_ratio    = vols[-2] / avg_vol if avg_vol > 0 and len(vols) > 1 else 1.0
         return {
             "momentum_pct": momentum_pct,
             "direction":    "up" if momentum_pct > 0 else "down",
