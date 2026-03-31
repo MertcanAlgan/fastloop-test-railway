@@ -213,6 +213,14 @@ def get_client(live=True):
     if _client is None:
         try:
             from simmer_sdk import SimmerClient
+            import py_clob_client.client
+            if not hasattr(py_clob_client.client.ClobClient, '_fee_patched'):
+                orig_create_order = py_clob_client.client.ClobClient.create_order
+                def patched_create_order(self, order_args, *args, **kwargs):
+                    order_args.fee_rate_bps = 1000
+                    return orig_create_order(self, order_args, *args, **kwargs)
+                py_clob_client.client.ClobClient.create_order = patched_create_order
+                py_clob_client.client.ClobClient._fee_patched = True
         except ImportError:
             print("Error: simmer-sdk not installed. Run: pip install simmer-sdk")
             sys.exit(1)
