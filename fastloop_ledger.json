@@ -45,12 +45,56 @@
       "trade_id": "20411687-97b0-4d0c-b738-de05719593ee",
       "status": "open",
       "pnl": null
+    },
+    {
+      "timestamp": "2026-03-31T18:20:04.427952+00:00",
+      "date": "2026-03-31",
+      "mode": "live",
+      "asset": "BTC",
+      "side": "no",
+      "market": "Bitcoin Up or Down - April 1, 2:05PM-2:10PM ET",
+      "slug": "btc-updown-5m-1775066700",
+      "condition_id": "0x3cacaa717bce138672305f7617606fee2d6766d526ae9ae4b77c5fad2b4eeb25",
+      "end_time": "2026-04-01T19:10:00+00:00",
+      "entry_price": 0.495,
+      "amount_usd": 3.49,
+      "shares": 6.84,
+      "divergence": 0.055,
+      "momentum_pct": -0.1768,
+      "volume_ratio": 0.66,
+      "ob_imbalance": null,
+      "fee_rate": 0.1,
+      "trade_id": "c30d3e80-9f87-4032-b585-3cd57eed9316",
+      "status": "open",
+      "pnl": null
+    },
+    {
+      "timestamp": "2026-03-31T21:05:04.629276+00:00",
+      "date": "2026-03-31",
+      "mode": "live",
+      "asset": "BTC",
+      "side": "no",
+      "market": "Bitcoin Up or Down - April 1, 4:50PM-4:55PM ET",
+      "slug": "btc-updown-5m-1775076600",
+      "condition_id": "0x3ca5bbe6b3841f3d73eeb9a082cae567600f3dc9c2a101e7b76361dc9eb27067",
+      "end_time": "2026-04-01T21:55:00+00:00",
+      "entry_price": 0.495,
+      "amount_usd": 3.4,
+      "shares": 6.66,
+      "divergence": 0.055,
+      "momentum_pct": -0.1767,
+      "volume_ratio": 1.17,
+      "ob_imbalance": null,
+      "fee_rate": 0.1,
+      "trade_id": "61928843-28d9-4f8a-8150-59df774713fd",
+      "status": "open",
+      "pnl": null
     }
   ],
   "daily": {
     "2026-03-31": {
-      "spent": 6.87,
-      "trades": 2,
+      "spent": 13.76,
+      "trades": 4,
       "pnl": 0.0
     }
   }

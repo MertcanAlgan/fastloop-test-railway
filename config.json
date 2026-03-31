@@ -15,6 +15,6 @@
   "time_filter": false,
   "vol_sizing": true,
   "fee_buffer": 0.01,
-  "daily_budget": 39.0,
+  "daily_budget": 20.0,
   "starting_balance": 1000.0
 }
