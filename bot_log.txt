@@ -2155,3 +2155,51 @@
   Market:    Bitcoin Up or Down - April 1, 1:05PM-1:10PM ET
   Signal:    UP 0.939% | YES $0.500
   Action:    FAILED YES $3.24
+⚡ FastLoop Improved Trader
+==================================================
+
+  [LIVE]
+⚡ Fee system patched (1000 bps force active)
+
+⚙️  Config summary:
+  Asset: BTC 5m | momentum ≥ 0.1% | divergence ≥ 0.05 | max $5.00
+  Signals: momentum | time_filter=off | vol_sizing=on
+  Budget: $39.00 remaining today ($0.00/$39.00)
+
+🔍 Discovering BTC 5m fast markets...
+  Found 1 active markets
+
+🎯 Market: Bitcoin Up or Down - April 1, 1:05PM-1:10PM ET
+  Time left: 89397s (fallback)
+  YES price: $0.505 | Fee: 10%
+
+📈 Signal 1 — Momentum (binance)...
+  BTC: $68,256.57 (was $68,366.26)
+  Momentum: -0.160% | Vol ratio: 0.87x | Direction: DOWN
+  ✓ Momentum gate passed
+  Signal 2 (funding): off
+  Signal 3 (orderbook): off
+
+🧠 EV Analysis...
+  Side: NO | Entry: $0.495
+  Actual divergence:   0.055
+  Required divergence: 0.050 (fee breakeven 52.1% + 0.01 buffer)
+  ✓ EV gate passed (edge: 0.005 above threshold)
+
+💰 Sizing...
+  24h vol: 2.97% | Vol-adjusted size: $3.37
+  Final size: $3.37
+
+✅ All gates passed — TRADE
+   BTC down -0.160% but YES still $0.505
+   Divergence 0.055 | Momentum 0.160% | Size $3.37
+
+🔗 Importing market to Simmer...
+  ✅ Market ID: de4debbf-d581-4c...
+  Placing NO $3.37 (LIVE)...
+  ✅ Bought 6.6 NO @ $0.495
+
+📊 Summary:
+  Market:    Bitcoin Up or Down - April 1, 1:05PM-1:10PM ET
+  Signal:    DOWN 0.160% | YES $0.505
+  Action:    TRADED NO $3.37

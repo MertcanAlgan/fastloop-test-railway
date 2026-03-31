@@ -1,0 +1,35 @@
+{
+  "starting_balance": 1000.0,
+  "paper_balance": 1000.0,
+  "trades": [
+    {
+      "timestamp": "2026-03-31T17:20:03.240098+00:00",
+      "date": "2026-03-31",
+      "mode": "live",
+      "asset": "BTC",
+      "side": "no",
+      "market": "Bitcoin Up or Down - April 1, 1:05PM-1:10PM ET",
+      "slug": "btc-updown-5m-1775063100",
+      "condition_id": "0x3285bb4afc92f53c6000bf0b47f7de5942c3882024874cd90ccb9ada914a3662",
+      "end_time": "2026-04-01T18:10:00+00:00",
+      "entry_price": 0.495,
+      "amount_usd": 3.37,
+      "shares": 6.6,
+      "divergence": 0.055,
+      "momentum_pct": -0.1604,
+      "volume_ratio": 0.87,
+      "ob_imbalance": null,
+      "fee_rate": 0.1,
+      "trade_id": "431ffe9d-6863-4e63-b710-dfc8a212b89d",
+      "status": "open",
+      "pnl": null
+    }
+  ],
+  "daily": {
+    "2026-03-31": {
+      "spent": 3.37,
+      "trades": 1,
+      "pnl": 0.0
+    }
+  }
+}
