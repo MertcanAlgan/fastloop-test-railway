@@ -2203,3 +2203,43 @@
   Market:    Bitcoin Up or Down - April 1, 1:05PM-1:10PM ET
   Signal:    DOWN 0.160% | YES $0.505
   Action:    TRADED NO $3.37
+⚡ FastLoop Improved Trader
+==================================================
+
+  [LIVE]
+⚡ Fee system reinforced (Force 1000 bps for Fast Markets)
+
+⚙️  Config summary:
+  Asset: BTC 5m | momentum ≥ 0.1% | divergence ≥ 0.05 | max $5.00
+  Signals: momentum | time_filter=off | vol_sizing=on
+  Budget: $35.63 remaining today ($3.37/$39.00)
+
+🔍 Discovering BTC 5m fast markets...
+  Found 2 active markets
+📊 Summary: No markets with >60s remaining
+  File "/Users/mertcanalgan/Desktop/fastloop-test-railway/fastloop_improved.py", line 266
+    global _client
+    ^^^^^^^^^^^^^^
+SyntaxError: name '_client' is used prior to global declaration
+⚡ FastLoop Improved Trader
+==================================================
+
+  [LIVE]
+⚡ Fee system reinforced (Force 1000 bps for Fast Markets)
+
+⚙️  Config summary:
+  Asset: BTC 5m | momentum ≥ 0.1% | divergence ≥ 0.05 | max $5.00
+  Signals: momentum | time_filter=off | vol_sizing=on
+  Budget: $35.63 remaining today ($3.37/$39.00)
+
+🔍 Discovering BTC 5m fast markets...
+  Found 2 active markets
+
+🎯 Market: Bitcoin Up or Down - April 1, 1:15PM-1:20PM ET
+  Time left: 89096s (fallback)
+  YES price: $0.505 | Fee: 10%
+
+📈 Signal 1 — Momentum (binance)...
+  BTC: $68,029.73 (was $67,935.15)
+  Momentum: +0.139% | Vol ratio: 0.38x | Direction: UP
+📊 Summary: Skip (low volume: 0.38x avg)

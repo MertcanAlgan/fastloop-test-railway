@@ -214,35 +214,52 @@ def get_client(live=True):
         try:
             from simmer_sdk import SimmerClient
             import py_clob_client.client
-            if not hasattr(py_clob_client.client.ClobClient, '_fee_patched'):
-                orig_create_order = py_clob_client.client.ClobClient.create_order
-                def patched_create_order(self, order_args, *args, **kwargs):
-                    try:
-                        # Force 10% fee for all orders (1000 bps)
-                        order_args.fee_rate_bps = 1000
-                    except Exception:
-                        pass
-                    return orig_create_order(self, order_args, *args, **kwargs)
+            
+            # Daha kapsamlı ve hata vermeyen yeni yama (patch)
+            if not hasattr(py_clob_client.client.ClobClient, '_fee_patched_v2'):
+                orig_methods = [
+                    'create_order', 
+                    'create_market_order', 
+                    'post_order'
+                ]
                 
-                orig_create_market_order = py_clob_client.client.ClobClient.create_market_order
-                def patched_create_market_order(self, order_args, *args, **kwargs):
-                    try:
-                        order_args.fee_rate_bps = 1000
-                    except Exception:
-                        pass
-                    return orig_create_market_order(self, order_args, *args, **kwargs)
+                def apply_fee_patch(orig_func):
+                    def wrapper(self, order_args, *args, **kwargs):
+                        # Polymarket Fast Markets için 1000 bps (%10) zorunludur
+                        fee_value = 1000 
+                        
+                        # Eğer order_args bir sözlükse (dict)
+                        if isinstance(order_args, dict):
+                            order_args['fee_rate_bps'] = fee_value
+                            order_args['taker_fee_bps'] = fee_value
+                        else:
+                            # Eğer bir nesneyse attribute olarak ata
+                            for attr in ['fee_rate_bps', 'taker_fee_bps']:
+                                try:
+                                    setattr(order_args, attr, fee_value)
+                                except:
+                                    pass
+                        return orig_func(self, order_args, *args, **kwargs)
+                    return wrapper
 
-                py_clob_client.client.ClobClient.create_order = patched_create_order
-                py_clob_client.client.ClobClient.create_market_order = patched_create_market_order
-                py_clob_client.client.ClobClient._fee_patched = True
-                print("⚡ Fee system patched (1000 bps force active)")
+                # ClobClient içindeki tüm kritik metodları yamala
+                for method_name in orig_methods:
+                    if hasattr(py_clob_client.client.ClobClient, method_name):
+                        orig = getattr(py_clob_client.client.ClobClient, method_name)
+                        setattr(py_clob_client.client.ClobClient, method_name, apply_fee_patch(orig))
+                
+                py_clob_client.client.ClobClient._fee_patched_v2 = True
+                print("⚡ Fee system reinforced (Force 1000 bps for Fast Markets)")
+
         except ImportError:
             print("Error: simmer-sdk not installed. Run: pip install simmer-sdk")
             sys.exit(1)
+
         api_key = os.environ.get("SIMMER_API_KEY")
         if not api_key:
             print("Error: SIMMER_API_KEY not set. Get from simmer.markets/dashboard → SDK tab")
             sys.exit(1)
+            
         venue = os.environ.get("TRADING_VENUE", "polymarket")
         _client = SimmerClient(api_key=api_key, venue=venue, live=live)
     return _client
