@@ -906,7 +906,7 @@ def run(dry_run=True, positions_only=False, show_config=False,
     log(f"  Actual divergence:   {divergence:.3f}")
     log(f"  Required divergence: {req_div:.3f} (fee breakeven {breakeven:.1%} + {cfg['fee_buffer']:.2f} buffer)")
 
-    if divergence < req_div:
+    if round(divergence, 4) < round(req_div, 4):
         bail(f"Skip (divergence {divergence:.3f} < required {req_div:.3f} after {fee_rate:.0%} fee)",
              "insufficient_ev")
         return

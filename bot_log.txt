@@ -1966,3 +1966,32 @@
   Actual divergence:   0.045
   Required divergence: 0.050 (fee breakeven 53.1% + 0.01 buffer)
 📊 Summary: Skip (divergence 0.045 < required 0.050 after 10% fee)
+⚡ FastLoop Improved Trader
+==================================================
+
+  [LIVE]
+
+⚙️  Config summary:
+  Asset: BTC 5m | momentum ≥ 0.1% | divergence ≥ 0.05 | max $5.00
+  Signals: momentum | time_filter=off | vol_sizing=on
+  Budget: $39.00 remaining today ($0.00/$39.00)
+
+🔍 Discovering BTC 5m fast markets...
+  Found 1 active markets
+
+🎯 Market: Bitcoin Up or Down - April 1, 10:25AM-10:30AM ET
+  Time left: 89698s (fallback)
+  YES price: $0.500 | Fee: 10%
+
+📈 Signal 1 — Momentum (binance)...
+  BTC: $67,506.77 (was $67,638.96)
+  Momentum: -0.195% | Vol ratio: 0.87x | Direction: DOWN
+  ✓ Momentum gate passed
+  Signal 2 (funding): off
+  Signal 3 (orderbook): off
+
+🧠 EV Analysis...
+  Side: NO | Entry: $0.500
+  Actual divergence:   0.050
+  Required divergence: 0.050 (fee breakeven 52.6% + 0.01 buffer)
+📊 Summary: Skip (divergence 0.050 < required 0.050 after 10% fee)
