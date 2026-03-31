@@ -214,52 +214,21 @@ def get_client(live=True):
         try:
             from simmer_sdk import SimmerClient
             import py_clob_client.client
-            
-            # Daha kapsamlı ve hata vermeyen yeni yama (patch)
-            if not hasattr(py_clob_client.client.ClobClient, '_fee_patched_v2'):
-                orig_methods = [
-                    'create_order', 
-                    'create_market_order', 
-                    'post_order'
-                ]
-                
-                def apply_fee_patch(orig_func):
-                    def wrapper(self, order_args, *args, **kwargs):
-                        # Polymarket Fast Markets için 1000 bps (%10) zorunludur
-                        fee_value = 1000 
-                        
-                        # Eğer order_args bir sözlükse (dict)
-                        if isinstance(order_args, dict):
-                            order_args['fee_rate_bps'] = fee_value
-                            order_args['taker_fee_bps'] = fee_value
-                        else:
-                            # Eğer bir nesneyse attribute olarak ata
-                            for attr in ['fee_rate_bps', 'taker_fee_bps']:
-                                try:
-                                    setattr(order_args, attr, fee_value)
-                                except:
-                                    pass
-                        return orig_func(self, order_args, *args, **kwargs)
-                    return wrapper
-
-                # ClobClient içindeki tüm kritik metodları yamala
-                for method_name in orig_methods:
-                    if hasattr(py_clob_client.client.ClobClient, method_name):
-                        orig = getattr(py_clob_client.client.ClobClient, method_name)
-                        setattr(py_clob_client.client.ClobClient, method_name, apply_fee_patch(orig))
-                
-                py_clob_client.client.ClobClient._fee_patched_v2 = True
-                print("⚡ Fee system reinforced (Force 1000 bps for Fast Markets)")
-
+            if not hasattr(py_clob_client.client.ClobClient, '_fee_patched'):
+                orig_create_order = py_clob_client.client.ClobClient.create_order
+                def patched_create_order(self, order_args, *args, **kwargs):
+                    order_args.fee_rate_bps = 1000 
+                    return orig_create_order(self, order_args, *args, **kwargs)
+                py_clob_client.client.ClobClient.create_order = patched_create_order
+                py_clob_client.client.ClobClient._fee_patched = True
+            # --- END PATCH ---
         except ImportError:
             print("Error: simmer-sdk not installed. Run: pip install simmer-sdk")
             sys.exit(1)
-
         api_key = os.environ.get("SIMMER_API_KEY")
         if not api_key:
             print("Error: SIMMER_API_KEY not set. Get from simmer.markets/dashboard → SDK tab")
             sys.exit(1)
-            
         venue = os.environ.get("TRADING_VENUE", "polymarket")
         _client = SimmerClient(api_key=api_key, venue=venue, live=live)
     return _client
@@ -938,7 +907,7 @@ def run(dry_run=True, positions_only=False, show_config=False,
     log(f"  Actual divergence:   {divergence:.3f}")
     log(f"  Required divergence: {req_div:.3f} (fee breakeven {breakeven:.1%} + {cfg['fee_buffer']:.2f} buffer)")
 
-    if round(divergence, 4) < round(req_div, 4):
+    if divergence < req_div:
         bail(f"Skip (divergence {divergence:.3f} < required {req_div:.3f} after {fee_rate:.0%} fee)",
              "insufficient_ev")
         return
