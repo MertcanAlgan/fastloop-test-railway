@@ -1,6 +1,6 @@
 {
   "entry_threshold": 0.05,
-  "min_momentum_pct": 0.1,
+  "min_momentum_pct": 1.0,
   "max_position": 5.0,
   "signal_source": "binance",
   "lookback_minutes": 5,
@@ -14,7 +14,7 @@
   "require_orderbook": false,
   "time_filter": false,
   "vol_sizing": true,
-  "fee_buffer": 0.01,
-  "daily_budget": 11.0,
+  "fee_buffer": 0.05,
+  "daily_budget": 10.0,
   "starting_balance": 1000.0
 }
