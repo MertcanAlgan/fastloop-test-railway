@@ -21,8 +21,10 @@
       "ob_imbalance": null,
       "fee_rate": 0.1,
       "trade_id": "431ffe9d-6863-4e63-b710-dfc8a212b89d",
-      "status": "open",
-      "pnl": null
+      "status": "won",
+      "pnl": 2.7573,
+      "outcome": "no",
+      "resolved_at": "2026-04-01T20:47:39.704588+00:00"
     },
     {
       "timestamp": "2026-03-31T17:50:04.232645+00:00",
@@ -43,8 +45,10 @@
       "ob_imbalance": null,
       "fee_rate": 0.1,
       "trade_id": "20411687-97b0-4d0c-b738-de05719593ee",
-      "status": "open",
-      "pnl": null
+      "status": "won",
+      "pnl": 2.8636,
+      "outcome": "no",
+      "resolved_at": "2026-04-01T20:47:39.704588+00:00"
     },
     {
       "timestamp": "2026-03-31T18:20:04.427952+00:00",
@@ -65,8 +69,10 @@
       "ob_imbalance": null,
       "fee_rate": 0.1,
       "trade_id": "c30d3e80-9f87-4032-b585-3cd57eed9316",
-      "status": "open",
-      "pnl": null
+      "status": "won",
+      "pnl": 2.8555,
+      "outcome": "no",
+      "resolved_at": "2026-04-01T20:47:39.704588+00:00"
     },
     {
       "timestamp": "2026-03-31T21:05:04.629276+00:00",
@@ -183,7 +189,7 @@
     "2026-03-31": {
       "spent": 17.18,
       "trades": 5,
-      "pnl": 0.0
+      "pnl": 8.476363636363637
     },
     "2026-04-01": {
       "spent": 10.89,
