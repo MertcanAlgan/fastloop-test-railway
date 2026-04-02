@@ -93,8 +93,10 @@
       "ob_imbalance": null,
       "fee_rate": 0.1,
       "trade_id": "61928843-28d9-4f8a-8150-59df774713fd",
-      "status": "open",
-      "pnl": null
+      "status": "won",
+      "pnl": 2.7818,
+      "outcome": "no",
+      "resolved_at": "2026-04-02T04:47:33.745346+00:00"
     },
     {
       "timestamp": "2026-03-31T22:25:03.715158+00:00",
@@ -115,8 +117,10 @@
       "ob_imbalance": null,
       "fee_rate": 0.1,
       "trade_id": "b471bdfc-61c9-40f1-afb4-a426229ebb4c",
-      "status": "open",
-      "pnl": null
+      "status": "won",
+      "pnl": 2.7982,
+      "outcome": "no",
+      "resolved_at": "2026-04-02T04:47:33.745346+00:00"
     },
     {
       "timestamp": "2026-04-01T01:20:03.918093+00:00",
@@ -137,8 +141,10 @@
       "ob_imbalance": null,
       "fee_rate": 0.1,
       "trade_id": "1273f77e-0da5-4b16-a064-d0ccbf016ba3",
-      "status": "open",
-      "pnl": null
+      "status": "won",
+      "pnl": 3.0191,
+      "outcome": "no",
+      "resolved_at": "2026-04-02T04:47:33.745346+00:00"
     },
     {
       "timestamp": "2026-04-01T01:35:03.350541+00:00",
@@ -159,8 +165,10 @@
       "ob_imbalance": null,
       "fee_rate": 0.1,
       "trade_id": "638fd68b-cb61-42ab-80c4-369f3f2bdcef",
-      "status": "open",
-      "pnl": null
+      "status": "won",
+      "pnl": 2.9782,
+      "outcome": "no",
+      "resolved_at": "2026-04-02T04:47:33.745346+00:00"
     },
     {
       "timestamp": "2026-04-01T02:30:03.181775+00:00",
@@ -181,20 +189,22 @@
       "ob_imbalance": null,
       "fee_rate": 0.1,
       "trade_id": "fa2db238-4336-4079-9d04-ea1408a5dd35",
-      "status": "open",
-      "pnl": null
+      "status": "won",
+      "pnl": 2.9127,
+      "outcome": "no",
+      "resolved_at": "2026-04-02T04:47:33.745346+00:00"
     }
   ],
   "daily": {
     "2026-03-31": {
       "spent": 17.18,
       "trades": 5,
-      "pnl": 8.476363636363637
+      "pnl": 14.056363636363637
     },
     "2026-04-01": {
       "spent": 10.89,
       "trades": 3,
-      "pnl": 0.0
+      "pnl": 8.91
     }
   }
 }
